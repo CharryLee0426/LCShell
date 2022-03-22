@@ -629,3 +629,38 @@ this is function 2.
 The behavior that call function itself called **recursive**. There also is a method that you can put definitions for commonly used functions inside your .profile. These definitions will be available whenever you log in and you can use them at the command prompt.
 
 To remove the definition of a function from the shell, use the unset command with the `-f ` option. This command is also used to remove the definition of a variable to the shell.
+
+## 2. Some Tips
+
+### 2.1 Alias V.S. PATH
+
+When I want to solve the problem that shell will add `alias settings` repeatly, I found a possible way like that:
+
+```bash
+# Previous operations:
+# add "alias pev=..." >> .zshrc(Linux) or .bashrc(macOS)
+
+# My way
+pevPATH=`which pev`
+
+if [ -z $pevPATH ]
+then
+    # add the alias setting to profile.
+fi
+```
+
+However, it doesn't work. This is because `which` can only locate a program file in the user's path. Usually, your command is a binary file which is located in `/usr/bin` or other paths which are in `$PATH`. Because we can't add this script to the `$PATH` because of the denied permission but create an alias to this script in zsh or bash.
+
+I found another solution. It can just works to check if `.zshrc` or `.bashrc` contains the alias infomation.
+
+### 2.2 How to Find Substring in Shell Script?
+That's a possible way to find substring in a file to use `*` regex operators. `*` means that no char or have any chars.
+
+```bash
+if [[ "$bashrc" != *"pev=${shellPATH}/createPyVenv.sh"* ]]
+then
+    # do workflow...
+fi
+```
+
+The script above will check if `$bashrc` matches `...pev=pev=${shellPATH}/createPyVenv.sh...`. Of course there are not only one way to find substring.
