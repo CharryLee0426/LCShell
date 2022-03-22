@@ -21,6 +21,8 @@ If you give wrong options or wrong directory, the script will give you an error 
 The shell supports macOS ,Ubuntu, Debian and other releases which use `apt` package manager.
 
 **CentOS, openSUSE and other releases which use `rpm` package manager can't make sure their compatibility.**
+> stable version: in version 1.0.0, I tested `environmentLinuxCheck` function and make sure that you can get apt
+and run this script correctly.
 
 **~Can not run on Windows.~**
 
@@ -41,6 +43,6 @@ The shell supports macOS ,Ubuntu, Debian and other releases which use `apt` pack
     ```
 
 ## 4. More Need To Do
-1. More test in different Operation Systems. Both macOS and Ubuntu are OK;
+1. ~More test in different Operation Systems. Both macOS and Ubuntu are OK~;
 2. Change the way that make the simple command `pev` available (alias ➡️ $PATH);
 3. ~Add the feature that users can change the folder name of Python virtual environment.~
