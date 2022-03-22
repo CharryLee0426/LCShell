@@ -5,8 +5,10 @@
 # @description: Create a python virtual environment
 #               in your current directory or your
 #               declared directory.
-# @bug:         2 lines useless info when there is no param.
-# @todo:        need more test. All OK in macOS.
+# @bug:         1. two lines useless info without argument;
+#               2. linux environment conflict: need python 3.8 or later;
+#               3. macOS environment conflict: can't assume zsh as default;
+#               4. tips grammar wrong;
 
 version="1.0.0"
 options="$1"
