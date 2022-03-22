@@ -1,0 +1,46 @@
+# Create Python Virtual Environment
+
+## 1. Usage
+
+For first time, you must give the execution permission to `createPyVenv.sh`.
+
+```bash
+# Assumed that you are in the correct directory.
+
+chmod 744 createPyVenv.sh
+```
+
+There are 3 options:
+* `-v` or `--version`: show the shell script's version;
+* `-d` or `--directory`: declare a directory where you want to build Python virtual environment;
+* `-h` or `--help`: show the usage of the shell script in the terminal.
+
+If you give wrong options or wrong directory, the script will give you an error message.
+
+## 2. Compatibility
+The shell supports macOS ,Ubuntu, Debian and other releases which use `apt` package manager.
+
+**CentOS, openSUSE and other releases which use `rpm` package manager can't make sure their compatibility.**
+
+**~Can not run on Windows.~**
+
+## 3. Bugs Have Found
+
+1. two lines useless info when there is no param.
+    ```bash
+    # /usr/bin/zsh
+    $ pev
+
+    /Users/lichen/GitRepos/LCshell/createPyVenv.sh: line 68: [: too many arguments
+    /Users/lichen/GitRepos/LCshell/createPyVenv.sh: line 71: [: too many arguments
+    usage:
+    pev <option> [directory]
+    -v --version
+    -h --help
+    -d --directory
+    ```
+
+## 4. More Need To Do
+1. More test in different Operation Systems. Both macOS and Ubuntu are OK;
+2. Change the way that make the simple command `pev` available (alias ➡️ $PATH);
+3. ~Add the feature that users can change the folder name of Python virtual environment.~
