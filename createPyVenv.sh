@@ -28,24 +28,28 @@ pev <option> [directory]
 environmentLinuxCheck () {
     if [ -z $pythonPATH ]
     then
-        echo "⚠️Your computer does not have Python3."
+        echo "⚠️ Your computer does not have Python3"
         sudo apt-get install python3
-        echo "✅Python3 has been installed"
+        echo "✅ Python3 has been installed"
+    else
+        echo "✅ Environment Checked OK"
     fi
 }
 
 environmentMacOSCheck () {
     if [ -z $pythonPATH ]
     then
-        echo "⚠️Your computer does not have Python3."
+        echo "⚠️ Your computer does not have Python3."
         if [ -z $brewPATH ]
         then
             echo "⚠️Your computer does not have brew."
             -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-            echo "✅Brew has been installed."
+            echo "✅ Brew has been installed."
         fi
         brew install python@3.8
-        echo "✅Python3 has been installed."
+        echo "✅ Python3 has been installed."
+    else
+        echo "✅ Environment Checked OK"
     fi
 }
 
@@ -60,13 +64,13 @@ buildVirtualEnvironment () {
     echo "[global]
 index-url = https://mirrors.aliyun.com/pypi/simple
 [install]
-trusted-host = mirrors.aliyun.com" >> ./venvPATH/pip.conf
+trusted-host = mirrors.aliyun.com" >> ./$venvPATH/pip.conf
     chmod 444 ./$venvPATH/pip.conf
     echo "✅ pip.conf created."
     echo "🍺 virtual environment starting..."
     echo "🎉 virtual envirmonment started..."
     echo "🔔 You can start virtual environment by 
-             source virtualEnvironment/bin/activate"
+             source $directory/$venvPATH/bin/activate"
     echo "🔔 You can use deactivate to stop the virtual environment."
 }
 
@@ -112,7 +116,7 @@ then
                 fi
             fi
         else
-            echo "❌Error: directory doesn't existed."
+            echo "❌ Error: directory doesn't existed."
         fi
     fi
 else
