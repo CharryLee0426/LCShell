@@ -85,7 +85,7 @@ On_ICyan='\033[0;106m'    # Cyan
 On_IWhite='\033[0;107m'   # White
 ###########################################################################
 
-version="1.0.0"
+version="1.0.6"
 options="$1"
 directory="$2"
 OSVersion=`uname`
@@ -104,7 +104,7 @@ environmentLinuxCheck () {
     if [ -z $pythonPATH ]
     then
         echo "⚠️ Your computer does not have Python3"
-        sudo apt-get install python3
+        sudo apt-get install python3=3.8.2
         echo "✅ Python3 has been installed"
     else
         echo "✅ Environment Checked OK"
