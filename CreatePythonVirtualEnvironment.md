@@ -36,7 +36,7 @@ and run this script correctly.
 
 ## 3. Bugs Have Found
 
-1. two lines useless info when there is no param.
+1. ~~two lines useless info when there is no param~~.
     ```bash
     # /usr/bin/zsh
     $ pev
@@ -49,8 +49,16 @@ and run this script correctly.
     -h --help
     -d --directory
     ```
+2. Bug at line 96
+    ```bash
+    # ...
+    shellPATH=`pwd`
+    # ...
+    ```
+    When running this script every time at different path, shellPATH will be different. Therefore, the script will add additional and incorrect alias information at $HOME/.zshrc or $HOME/.bashrc.
+    Maybe it won't effect the pev command run correctly for the reason that the bash or zsh ignores additional alias settings about command pev. But there is also necessary to fix it in further version.
 
 ## 4. More Need To Do
 1. ~More test in different Operation Systems. Both macOS and Ubuntu are OK~;
-2. Change the way that make the simple command `pev` available (alias ➡️ $PATH);
+2. [**Blocked**] ~~Change the way that make the simple command `pev` available (alias ➡️ $PATH)~~;
 3. ~Add the feature that users can change the folder name of Python virtual environment.~
