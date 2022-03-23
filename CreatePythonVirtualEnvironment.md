@@ -19,7 +19,7 @@ chmod 744 createPyVenv.sh
 ```
 
 There are 3 options:
-* `-v` or `--version`: show the shell script's version;
+* `-v` or `--version`: show the shell script's stable version;
 * `-d` or `--directory`: declare a directory where you want to build Python virtual environment;
 * `-h` or `--help`: show the usage of the shell script in the terminal.
 
