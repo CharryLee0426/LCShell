@@ -1,5 +1,13 @@
 # Create Python Virtual Environment
 
+## 0. Brief Introduction
+This is a develop documentation about the further features of `createPyEnv.sh`.
+It can:
+* Create a Python virtual environment in your declared directory;
+* Check prerequesties automatically;
+* Install prerequesties automatially;
+* Add pip config in China mainland.
+
 ## 1. Usage
 
 For first time, you must give the execution permission to `createPyVenv.sh`.
