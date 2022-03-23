@@ -85,7 +85,7 @@ On_ICyan='\033[0;106m'    # Cyan
 On_IWhite='\033[0;107m'   # White
 ###########################################################################
 
-version="1.0.6"
+version="1.1.0"
 options="$1"
 directory="$2"
 OSVersion=`uname`
