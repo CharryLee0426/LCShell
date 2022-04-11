@@ -176,7 +176,7 @@ then
             if [ $OSVersion = "Linux" ]
             then
                 bashrc=`cat ~/.bashrc`
-                if [[ "$bashrc" != *"pev=${shellPATH}/createPyVenv.sh"* ]]
+                if [[ "$bashrc" != *"/createPyVenv.sh"* ]]
                 then
                     echo "
                 # added by createPyVenv.sh
@@ -185,7 +185,7 @@ then
                 fi
             else
                 zshrc=`cat ~/.zshrc`
-                if [[ "$zshrc" != *"pev=${shellPATH}/createPyVenv.sh"* ]]
+                if [[ "$zshrc" != *"/createPyVenv.sh"* ]]
                 then
                     echo "
                 # added by createPyVenv.sh

@@ -49,7 +49,8 @@ and run this script correctly.
     -h --help
     -d --directory
     ```
-2. Bug at line 96
+
+2. ~~Bug at line 96~~
     ```bash
     # ...
     shellPATH=`pwd`
@@ -57,6 +58,18 @@ and run this script correctly.
     ```
     When running this script every time at different path, shellPATH will be different. Therefore, the script will add additional and incorrect alias information at $HOME/.zshrc or $HOME/.bashrc.
     Maybe it won't effect the pev command run correctly for the reason that the bash or zsh ignores additional alias settings about command pev. But there is also necessary to fix it in further version.
+
+    It's very easy to fix. Because the check in `~/.zshrc` or `~/.bashrc` is so strict. Therefore, I changed the match pattern from
+
+    ```bash
+    "$bashrc" != *"pev=${shellPATH}/createPyVenv.sh"*
+    ```
+
+    to
+
+    ```bash
+    "$zshrc" != *"/createPyVenv.sh"*
+    ```
 
 ## 4. More Need To Do
 1. ~More test in different Operation Systems. Both macOS and Ubuntu are OK~;
